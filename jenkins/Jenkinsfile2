@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    tools {
+        docker 'myDocker'
+    }
+    stages {
+        stage('Pull Image') {
+            steps {
+                sh 'docker pull maven:3-alpine'
+            }
+        }
+    }
+}
