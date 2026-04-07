@@ -1,12 +1,12 @@
 pipeline {
     agent 
     tools {
-        Docker 'myDocker'
+        docker 'myDocker'
     }
     stages {
         stage('Pull Image') {
             steps {
-            sh 'Docker pull maven:3-alpine'
+            sh 'docker pull maven:3-alpine'
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
         }
